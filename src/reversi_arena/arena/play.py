@@ -84,7 +84,8 @@ class PlayManager:
         :param list[NBoardEngineClient] move_order:
         :return:
         """
-        logger.info(f"{env.winner}: {env.board.number_of_black_and_white}")
+        logger.info(f"({move_order[0].my_name} vs {move_order[1].my_name}) {env.winner}: "
+                    f"{env.board.number_of_black_and_white}")
         black_results = self.stats[move_order[0]].black
         white_results = self.stats[move_order[1]].white
 

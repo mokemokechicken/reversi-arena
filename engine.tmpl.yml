@@ -3,7 +3,7 @@ ntest:
   command: mNtest
 
 raz:
-  working_dir: /Users/<name>/Documents/workspace/reversi-alpha-zero
+  working_dir: /path/to/reversi-alpha-zero
   command: nboard_engine
   env:
     PATH: /Users/<name>/.pyenv/shims:/bin:/usr/bin:/usr/sbin
