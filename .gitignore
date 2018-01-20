@@ -1,0 +1,13 @@
+.idea
+.python-version
+*.png
+*.pyc
+__pycache__
+.DS_Store
+tmp/
+tmp.*
+.env
+logs/
+*.sh
+*.ggf
+engine.yml
