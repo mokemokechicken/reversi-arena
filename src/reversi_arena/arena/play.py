@@ -72,7 +72,7 @@ class PlayManager:
 
     def init_game(self, move_order):
         logger.debug("init game")
-        ggf = make_ggf_string(black_name=move_order[0].my_name, white_name=move_order[1].my_name)
+        ggf = make_ggf_string(black_name=move_order[0].my_name, white_name=move_order[1].my_name, think_time_sec=900)
         for c in move_order:
             c.set_game(ggf)
         self.move_records = []
