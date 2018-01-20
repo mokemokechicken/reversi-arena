@@ -91,7 +91,7 @@ class NBoardEngineClient:
                 break
             if isinstance(line, bytes):
                 line = line.decode("utf8")
-            self._communication_logger.warning(line.rstrip())
+            self._communication_logger.debug(line.rstrip())
 
     def announce_move(self, response: GoResponse):
         self._send(f"move {response.move_str}")
