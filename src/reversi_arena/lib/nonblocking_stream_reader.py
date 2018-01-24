@@ -8,8 +8,11 @@ class NonBlockingStreamReader:
         self._stream = stream
         self._queue = Queue()
         self._thread = None
+        self.closed = True
 
     def start(self, push_callback=None):
+        self.closed = False
+
         def _worker():
             while True:
                 line = self._stream.readline()
@@ -18,6 +21,7 @@ class NonBlockingStreamReader:
                         push_callback(line)
                     self._queue.put(line)
                 else:
+                    self.closed = True
                     raise RuntimeError("line is empty")
 
         self._thread = Thread(target=_worker)
